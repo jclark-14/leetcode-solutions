@@ -1,24 +1,24 @@
 name: Sync LeetCode Solutions
 
 on:
-  workflow_dispatch:  # Allows you to trigger the workflow manually
+  workflow_dispatch:  # Allows manual runs
   schedule:
     - cron: "0 8 * * 6"  # Runs every Saturday at 8 AM
 
 jobs:
   sync:
-    runs-on: ubuntu-latest  # Uses the latest version of Ubuntu for the runner
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2  # Checks out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-- name: Sync LeetCode Solutions
-  uses: your-username/leetcode-sync@main
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-    leetcode-session: ${{ secrets.LEETCODE_SESSION_TOKEN }}
-    destination-folder: solutions
-    verbose: true
-    commit-header: "[LeetCode Sync]"
+      - name: Sync LeetCode Solutions
+        uses: joshcai/leetcode-sync@v1.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION_TOKEN }}
+          destination-folder: solutions
+          verbose: true
+          commit-header: "[LeetCode Sync]"
