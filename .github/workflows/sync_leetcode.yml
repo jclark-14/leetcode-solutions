@@ -28,7 +28,11 @@ jobs:
       - name: Debug API Authentication
         run: |
           echo "CSRF Token: ${{ secrets.LEETCODE_CSRF_TOKEN }}"
-          SESSION_TOKEN=${{ secrets.LEETCODE_SESSION_TOKEN }}
+          if [[ -z "${{ secrets.LEETCODE_SESSION_TOKEN }}" ]]; then
+          echo "Session token is empty!"
+          exit 1
+          fi
           echo "Session Token Length: ${#SESSION_TOKEN}"
+
 
 
