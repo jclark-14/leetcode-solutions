@@ -13,12 +13,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2  # Checks out the repository code
 
-      - name: Sync LeetCode Solutions
-        uses: joshcai/leetcode-sync@v1.7  # Uses the LeetCode Sync Action
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-          leetcode-session: ${{ secrets.LEETCODE_SESSION_TOKEN }}
-          destination-folder: solutions  # Directory where solutions will be saved
-          verbose: true  # Enables detailed logs
-          commit-header: "[LeetCode Sync]"  # Header for commit messages
+- name: Sync LeetCode Solutions
+  uses: your-username/leetcode-sync@main
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+    leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+    leetcode-session: ${{ secrets.LEETCODE_SESSION_TOKEN }}
+    destination-folder: solutions
+    verbose: true
+    commit-header: "[LeetCode Sync]"
