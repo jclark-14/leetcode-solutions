@@ -28,4 +28,7 @@ jobs:
       - name: Debug API Authentication
         run: |
           echo "CSRF Token: ${{ secrets.LEETCODE_CSRF_TOKEN }}"
-            echo "Session Token Length: ${#secrets.LEETCODE_SESSION_TOKEN}"
+          SESSION_TOKEN=${{ secrets.LEETCODE_SESSION_TOKEN }}
+          echo "Session Token Length: ${#SESSION_TOKEN}"
+
+
