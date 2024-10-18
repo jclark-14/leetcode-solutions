@@ -22,3 +22,5 @@ jobs:
           destination-folder: solutions
           verbose: true
           commit-header: "[LeetCode Sync]"
+      - name: List Repository Files for Debugging
+        run: ls -R
