@@ -24,3 +24,8 @@ jobs:
           commit-header: "[LeetCode Sync]"
       - name: List Repository Files for Debugging
         run: ls -R
+        
+      - name: Debug API Authentication
+        run: |
+          echo "CSRF Token: ${{ secrets.LEETCODE_CSRF_TOKEN }}"
+            echo "Session Token Length: ${#secrets.LEETCODE_SESSION_TOKEN}"
