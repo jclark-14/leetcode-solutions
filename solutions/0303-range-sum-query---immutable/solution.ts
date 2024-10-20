@@ -1,5 +1,5 @@
 class NumArray {
-    private prefix: number[];
+     prefix: number[];
     constructor(nums: number[]) {
         this.prefix = new Array(nums.length + 1).fill(0);
         for(let i = 0; i < nums.length; i++){
